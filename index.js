@@ -3,19 +3,19 @@ let dbUsers = [
         username: "polo bon",
         password: "password",
         namw: "Bon Zi Qin",
-        enail: "bon@utem.edu.my"
+        email: "bon@utem.edu.my"
     },
     {
         username: "hoho",
         password: "123456",
         namw: "HoHo",
-        enail: "hoho@utem.edu.my"
+        email: "hoho@utem.edu.my"
     },
     {
         username: "ako",
         password: "012345",
         namw: "Ako",
-        enail: "ako@utem.edu.my"
+        email: "ako@utem.edu.my"
     }
         
 ]
@@ -40,10 +40,22 @@ function login(username, password) {
     }
 }
 
+function register(newusername, newpassword, newname, newemail) {
+    // todo: check if username exist
+
+    dbUsers.push({
+        username: newusername,
+        password: newpassword,
+        name: newname,
+        email: newemail
+    })
+}
 // try to login
 // login("polo bon", "password")
 
-console.log(login("polo bon", "password"))
-console.log(login("polo bon", "fuck"))
+// console.log(login("polo bon", "password"))
+// console.log(login("polo bon", "halooo"))
 
 
+// register
+console.log(register("utem", "123456", "UTeM", "UTeM@student.edu.my"))
