@@ -41,14 +41,20 @@ function login(username, password) {
 }
 
 function register(newusername, newpassword, newname, newemail) {
-    // todo: check if username exist
+    let matched = dbUsers.find(element => element.username == newusername) 
 
-    dbUsers.push({
-        username: newusername,
-        password: newpassword,
-        name: newname,
-        email: newemail
-    })
+    if (matched) {
+       return "username already exist in earth"
+    } else {
+        dbUsers.push({
+            username: newusername,
+            password: newpassword,
+            name: newname,
+            email: newemail
+        })
+        return "new account has been created"
+    }
+    
 }
 // try to login
 // login("polo bon", "password")
@@ -59,3 +65,4 @@ function register(newusername, newpassword, newname, newemail) {
 
 // register
 console.log(register("utem", "123456", "UTeM", "UTeM@student.edu.my"))
+console.log(login("utem", "123456"))
